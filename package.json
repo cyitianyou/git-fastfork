@@ -1,0 +1,30 @@
+{
+    "name": "git-fastfork",
+    "version": "1.0.0",
+    "description": "快速删除组织里的git项目并重新fork",
+    "main": "index.js",
+    "scripts": {
+        "prestart": "npm install",
+        "compile": "tsc && ",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "git",
+        "fork"
+    ],
+    "author": "cyitianyou",
+    "license": "ISC",
+    "dependencies": {
+        "@types/bootstrap": "^3.3.36",
+        "@types/bootstrap-table": "^1.11.5",
+        "@types/jquery": "^3.2.12",
+        "bootstrap": "^3.3.7",
+        "bootstrap-table": "^1.11.2",
+        "github-api": "^3.0.0",
+        "jquery": "^3.2.1",
+        "require": "^2.4.20"
+    },
+    "devDependencies": {
+        "webpack": "^3.6.0"
+    }
+}

@@ -1,0 +1,5 @@
+out
+node_modules
+*.vsix
+public/js/fastfork
+public/js/3rdparty

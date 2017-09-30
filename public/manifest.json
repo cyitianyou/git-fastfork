@@ -1,0 +1,22 @@
+{
+    "author": "cyitianyou@gmail.com",
+    "background": {
+        "scripts": ["js/background.js"]
+    },
+    "browser_action": {
+        "default_icon": "images/logo.png"
+    },
+    "default_locale": "zh_CN",
+    "description": "__MSG_extDesc__",
+    "icons": {
+        "128": "images/logo.png",
+        "16": "images/logo.png",
+        "48": "images/logo.png"
+    },
+    "manifest_version": 2,
+    "name": "__MSG_extName__",
+    "permissions": ["tabs", "http://*/*", "https://*/*", "webRequest", "*://*.google.com/", "*://*.github.com/"],
+    "short_name": "__MSG_extName__",
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "version": "1.0.0"
+}

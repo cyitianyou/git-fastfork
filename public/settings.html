@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Github 快速fork项目</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/settings.css">
+    <script src="./js/3rdparty/jquery.min.js"></script>
+    <script src="./js/3rdparty/bootstrap.min.js"></script>
+    <script src="./js/settings.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <form class="form-horizontal">
+                    <span class="heading">初始设置</span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="token" placeholder="Github Personal access tokens">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="form-group help">
+                        <input type="text" class="form-control" id="orgName" placeholder="组织名称(如 color-coding)">
+                        <i class="fa fa-lock"></i>
+                        <a href="#" class="fa fa-question-circle"></a>
+                    </div>
+                    <div class="form-group">
+                        <a href="https://github.com/settings/tokens" target="_blank" class="text">没有Token?这里申请</a>
+                        <button id="btnUse" type="button" class="btn btn-default">开始使用</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

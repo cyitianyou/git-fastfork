@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Github 快速fork项目</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-table.css">
+    <script src="./js/3rdparty/jquery.min.js"></script>
+    <script src="./js/3rdparty/bootstrap.min.js"></script>
+    <script src="./js/3rdparty/bootstrap-table.js"></script>
+    <script src="./js/loader.js"></script>
+    <script src="./js/3rdparty/require.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>组织内所有仓库</h1>
+        <p></p>
+        <div id="toolbar" class="btn-toolbar">
+            <div class="btn-group">
+                <button id="btn_fork" type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>fork
+                </button>
+                <button id="btn_delete" type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>delete
+                </button>
+            </div>
+            <div class="btn-group pull-right">
+                <button id="btn_refresh" type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>刷新
+                </button>
+                <button id="btn_config" type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>配置
+                </button>
+            </div>
+        </div>
+
+        <table id="table" data-toggle="table" data-height="500">
+            <thead>
+                <tr>
+                    <th data-field="state" data-checkbox="true"></th>
+                    <th data-field="name">仓库名称</th>
+                    <th data-field="fork">是否fork</th>
+                    <th data-field="msg">消息</th>
+                    <!-- <th data-field="name" data-formatter="nameFormatter" data-events="nameEvents">操作</th> -->
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+
+</html>
