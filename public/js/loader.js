@@ -44,7 +44,7 @@
         let that = this
         require(['3rdparty/GitHub'], function(github) {
             fastfork.Github = github
-            require(['fastfork/index'], function() {
+            require(['fastfork'], function() {
                 that.onLoaded()
             }, requireError)
         }, requireError)

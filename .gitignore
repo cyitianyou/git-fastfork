@@ -1,5 +1,9 @@
 out
 node_modules
 *.vsix
-public/js/fastfork
 public/js/3rdparty
+src/*.js
+public/css/bootstrap-table.css
+public/css/bootstrap.min.css
+public/fonts
+public/js/fastfork.js

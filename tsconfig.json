@@ -2,7 +2,6 @@
     "compilerOptions": {
         "module": "amd",
         "target": "es6",
-        "outDir": "public/js/fastfork",
         "sourceMap": false,
         "rootDir": "./src"
     },
