@@ -12,4 +12,6 @@ export interface IGitRepository {
     name: string;
     // 是否已经fork
     fork: boolean;
+    // 最后更新时间
+    pushed_at: string;
 }

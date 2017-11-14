@@ -4,7 +4,7 @@ var json = require('./package.json')
 module.exports = {
     entry: './src/index.ts',
     output: {
-        path: __dirname + '/public',
+        path: __dirname + '/docs',
         filename: 'js/fastfork.js',
         publicPath: '/'
     },

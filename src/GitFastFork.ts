@@ -58,6 +58,9 @@ export class GitFastFork implements IGitFastFork {
                             } else {
                                 gitRepo.fork = false;
                             }
+                            if (!!orgRepo.pushed_at) {
+                                gitRepo.pushed_at = dates.toString(new Date(orgRepo.pushed_at), "yyyy-MM-dd hh:mm:ss");
+                            }
                             that.gitRepos.push(gitRepo);
                             that.fireReposChanged();
                             if (repos.length > index + 1) {
@@ -141,4 +144,83 @@ export class GitRepository implements IGitRepository {
     fork: boolean;
     // 消息
     msg: string;
+    // 最后更新时间
+    pushed_at: string;
+}
+/**
+ * 日期
+ */
+export module dates {
+
+    const DATA_SEPARATOR: string = "-";
+    const TIME_SEPARATOR: string = ":";
+    const DATA_TIME_SEPARATOR: string = "T";
+    const DATA_PART_YEAR: string = "yyyy";
+    const DATA_PART_MONTH: string = "MM";
+    const DATA_PART_DAY: string = "dd";
+    const DATA_PART_HOUR: string = "hh";
+    const DATA_PART_MINUTE: string = "mm";
+    const DATA_PART_SECOND: string = "ss";
+    /**
+     * 转换日期
+     * @param value 日期
+     * @returns 日期字符串
+     */
+    export function toString(value: Date): string;
+    /**
+     * 转换日期
+     * @param value 日期
+     * @param format 格式字符，yyyy-MM-dd
+     * @returns 日期字符串
+     */
+    export function toString(value: Date, format: string): string;
+    /**
+     * 转换日期
+     * @param value 日期
+     * @returns 日期字符串
+     */
+    export function toString(): string {
+        function fill(value: any, size: number, char: string): string {
+            let newValue: string = value.toString();
+            for (let index: number = newValue.length; index < size; index++) {
+                newValue = char + newValue;
+            }
+            return newValue;
+        }
+        let value: Date = arguments[0];
+        if (!value || !(value instanceof Date)) {
+            return "";
+        }
+        let format: string =
+            DATA_PART_YEAR + DATA_SEPARATOR +
+            DATA_PART_MONTH + DATA_SEPARATOR +
+            DATA_PART_DAY +
+            DATA_TIME_SEPARATOR +
+            DATA_PART_HOUR + TIME_SEPARATOR +
+            DATA_PART_MINUTE + TIME_SEPARATOR +
+            DATA_PART_SECOND;
+        if (!!arguments[1]) {
+            format = arguments[1];
+        }
+        let year: number = value.getFullYear(),
+            month: number = value.getMonth(),
+            day: number = value.getDate(),
+            hour: number = value.getHours(),
+            minute: number = value.getMinutes(),
+            second: number = value.getSeconds();
+        format = format.replace(DATA_PART_YEAR, fill(year, DATA_PART_YEAR.length, "0"));
+        format = format.replace(DATA_PART_MONTH, fill(month + 1, DATA_PART_MONTH.length, "0"));
+        format = format.replace(DATA_PART_DAY, fill(day, DATA_PART_DAY.length, "0"));
+        format = format.replace(DATA_PART_HOUR, fill(hour, DATA_PART_HOUR.length, "0"));
+        format = format.replace(DATA_PART_MINUTE, fill(minute, DATA_PART_MINUTE.length, "0"));
+        format = format.replace(DATA_PART_SECOND, fill(second, DATA_PART_SECOND.length, "0"));
+        return format;
+    }
+
+    export enum emDifferenceType {
+        DAY,
+        HOUR,
+        MINUTE,
+        SECOND
+    }
 }
